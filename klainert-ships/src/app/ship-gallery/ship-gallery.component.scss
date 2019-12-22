@@ -1,0 +1,14 @@
+.background{
+    background-image: url('../../assets/space.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    height: auto;
+}
+.list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
