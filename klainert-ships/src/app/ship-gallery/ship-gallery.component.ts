@@ -15,9 +15,9 @@ export class ShipGalleryComponent implements OnInit {
         img: '../../assets/ship.png'
       },
       {
-        img: '../../assets/ship2.jpg'
+        img: '../../assets/ship2.png'
       }, {
-        img: '../../assets/ship3.jpg'
+        img: '../../assets/ship3.png'
       }, {
         img: '../../assets/ship4.png'
       }, {
@@ -30,12 +30,6 @@ export class ShipGalleryComponent implements OnInit {
         img: '../../assets/ship8.png'
       }, {
         img: '../../assets/ship9.png'
-      }, {
-        img: '../../assets/ship10.png'
-      }, {
-        img: '../../assets/ship11.png'
-      }, {
-        img: '../../assets/ship12.png'
       }
     ];
   }
