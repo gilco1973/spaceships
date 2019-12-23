@@ -1,3 +1,4 @@
 <div class="frame">
-    <div class="btnShip" [ngStyle]="{'background-image': 'url('+img+')'}"></div>
+    <div [@rotatedState]='state'
+    class="btnShip" (click)="rotate()" [ngStyle]="{'background-image': 'url('+img+')'}"></div>
 </div>

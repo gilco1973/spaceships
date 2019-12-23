@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShipGalleryComponent implements OnInit {
   ships: any[];
+  selectedShip: any;
   constructor() { }
 
   ngOnInit() {
@@ -32,6 +33,9 @@ export class ShipGalleryComponent implements OnInit {
         img: '../../assets/ship9.png'
       }
     ];
+  }
+  startGame(){
+    
   }
 
 }

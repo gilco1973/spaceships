@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { ShipGalleryComponent } from './ship-gallery/ship-gallery.component';
 import { ShipFrameComponent } from './ship-frame/ship-frame.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ShipFrameComponent } from './ship-frame/ship-frame.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
 
   ],
   providers: [],

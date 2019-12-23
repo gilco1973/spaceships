@@ -4,6 +4,11 @@
     margin:10px;
 
 }
+.frame:hover{
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}
 .btnShip{
     background-size: contain;
     background-repeat: no-repeat;
