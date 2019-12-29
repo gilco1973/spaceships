@@ -8,13 +8,15 @@ import { FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule  }
 import { ShipGalleryComponent } from './ship-gallery/ship-gallery.component';
 import { ShipFrameComponent } from './ship-frame/ship-frame.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GameComponent } from './game/game.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ShipGalleryComponent,
-    ShipFrameComponent
+    ShipFrameComponent,
+    GameComponent
   ],
   imports: [
     BrowserModule,

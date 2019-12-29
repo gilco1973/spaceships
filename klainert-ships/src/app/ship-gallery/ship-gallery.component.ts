@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, Route } from '@angular/router';
+import { GameService } from '../game.service';
 
 @Component({
   selector: 'app-ship-gallery',
@@ -8,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class ShipGalleryComponent implements OnInit {
   ships: any[];
   selectedShip: any;
-  constructor() { }
+  constructor(private router:Router, private gameService:GameService) { }
 
   ngOnInit() {
     this.ships = [
@@ -35,7 +37,9 @@ export class ShipGalleryComponent implements OnInit {
     ];
   }
   startGame(){
-    
+    console.log(this.selectedShip);
+    this.gameService.ship = this.selectedShip;
+    this.router.navigateByUrl('/game');
   }
 
 }
