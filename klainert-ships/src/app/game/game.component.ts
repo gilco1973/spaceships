@@ -11,6 +11,28 @@ import { ShipComponent } from '../ship/ship.component';
 })
 export class GameComponent implements OnInit, AfterViewInit {
   ship: ShipComponent;
+  shooting = false;
+  @HostListener('document:keydown.space')
+  shoot() {
+    console.log('listener key space');
+    if(this.shooting){
+      return;
+    }
+    var ship = document.getElementById('ship1');
+    var shot:any = document.getElementById('shot');
+    this.shooting = true;
+    let idx = 0; 
+    let inter = setInterval(()=>{
+      idx++;
+      if(idx>500){
+        clearInterval(inter);
+        this.shooting = false;
+      }
+      shot.style.transform = 'translate(' + (this.ship.X+idx)+'px,'+(this.ship.Y) + 'px)';
+    },1);
+    
+    
+  }
   @HostListener('document:keydown.arrowleft')
   moveLeft() {
     console.log('listener key left');
@@ -19,7 +41,7 @@ export class GameComponent implements OnInit, AfterViewInit {
     element.style.transform = 'translate(' + (this.ship.X)+'px,'+(this.ship.Y) + 'px)';
     console.log('X:' + this.ship.X);
   }
-
+  
 
   @HostListener('document:keydown.arrowright')
   moveRight() {

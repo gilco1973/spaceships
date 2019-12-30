@@ -10,6 +10,7 @@ import { ShipFrameComponent } from './ship-frame/ship-frame.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GameComponent } from './game/game.component';
 import { ShipComponent } from './ship/ship.component';
+import { ShotComponent } from './shot/shot.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ShipComponent } from './ship/ship.component';
     ShipGalleryComponent,
     ShipFrameComponent,
     GameComponent,
-    ShipComponent
+    ShipComponent,
+    ShotComponent
   ],
   imports: [
     BrowserModule,
