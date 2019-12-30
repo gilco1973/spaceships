@@ -25,6 +25,8 @@ export class GameComponent implements OnInit, AfterViewInit {
     audio.src = "../../assets/sfx/gun.mp3";
     audio.load();
     audio.play();
+    const x = this.ship.X;
+    const y = this.ship.Y;
     this.shooting = true;
     let inter = setInterval(() => {
       idx++;
@@ -32,7 +34,7 @@ export class GameComponent implements OnInit, AfterViewInit {
         clearInterval(inter);
         this.shooting = false;
       }
-      shot.style.transform = 'translate(' + (this.ship.X + idx) + 'px,' + (this.ship.Y + 12) + 'px)';
+      shot.style.transform = 'translate(' + (x + idx) + 'px,' + (y + 12) + 'px)';
     }, 1);
 
 
