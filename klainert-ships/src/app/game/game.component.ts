@@ -15,40 +15,44 @@ export class GameComponent implements OnInit, AfterViewInit {
   @HostListener('document:keydown.space')
   shoot() {
     console.log('listener key space');
-    if(this.shooting){
+    if (this.shooting) {
       return;
     }
-    var ship = document.getElementById('ship1');
-    var shot:any = document.getElementById('shot');
+    var shot: any = document.getElementById('shot');
+    
+    let idx = 0;
+    let audio = new Audio();
+    audio.src = "../../assets/sfx/gun.mp3";
+    audio.load();
+    audio.play();
     this.shooting = true;
-    let idx = 0; 
-    let inter = setInterval(()=>{
+    let inter = setInterval(() => {
       idx++;
-      if(idx>500){
+      if (idx > 500) {
         clearInterval(inter);
         this.shooting = false;
       }
-      shot.style.transform = 'translate(' + (this.ship.X+idx)+'px,'+(this.ship.Y) + 'px)';
-    },1);
-    
-    
+      shot.style.transform = 'translate(' + (this.ship.X + idx) + 'px,' + (this.ship.Y + 12) + 'px)';
+    }, 1);
+
+
   }
   @HostListener('document:keydown.arrowleft')
   moveLeft() {
     console.log('listener key left');
     var element = document.getElementById('ship1');
     this.ship.X -= 5;
-    element.style.transform = 'translate(' + (this.ship.X)+'px,'+(this.ship.Y) + 'px)';
+    element.style.transform = 'translate(' + (this.ship.X) + 'px,' + (this.ship.Y) + 'px)';
     console.log('X:' + this.ship.X);
   }
-  
+
 
   @HostListener('document:keydown.arrowright')
   moveRight() {
     console.log('listener key right');
     var element = document.getElementById('ship1');
     this.ship.X += 5;
-    element.style.transform = 'translate(' + (this.ship.X)+'px,'+(this.ship.Y) + 'px)';
+    element.style.transform = 'translate(' + (this.ship.X) + 'px,' + (this.ship.Y) + 'px)';
     console.log('X:' + this.ship.X);
   }
 
@@ -57,7 +61,7 @@ export class GameComponent implements OnInit, AfterViewInit {
     console.log('listener key up');
     var element = document.getElementById('ship1');
     this.ship.Y -= 5;
-    element.style.transform = 'translate(' + (this.ship.X)+'px,'+(this.ship.Y) + 'px)';
+    element.style.transform = 'translate(' + (this.ship.X) + 'px,' + (this.ship.Y) + 'px)';
     console.log('Y:' + this.ship.Y);
   }
 
@@ -66,7 +70,7 @@ export class GameComponent implements OnInit, AfterViewInit {
     console.log('listener key down');
     var element = document.getElementById('ship1');
     this.ship.Y += 5;
-    element.style.transform = 'translate(' + (this.ship.X)+'px,'+(this.ship.Y) + 'px)';
+    element.style.transform = 'translate(' + (this.ship.X) + 'px,' + (this.ship.Y) + 'px)';
     console.log('Y:' + this.ship.Y);
   }
 
