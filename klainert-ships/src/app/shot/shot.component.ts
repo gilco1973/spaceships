@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shot.component.scss']
 })
 export class ShotComponent implements OnInit {
-
+  id;
+  shooting;
   constructor() { }
 
   ngOnInit() {

@@ -11,6 +11,7 @@ import { ShipComponent } from '../ship/ship.component';
 })
 export class GameComponent implements OnInit, AfterViewInit {
   ship: ShipComponent;
+  keysDown =[];
   shooting = false;
   @HostListener('document:keydown.space')
   shoot() {
@@ -29,7 +30,7 @@ export class GameComponent implements OnInit, AfterViewInit {
     const y = this.ship.Y;
     this.shooting = true;
     let inter = setInterval(() => {
-      idx++;
+      idx+=3;
       if (idx > 500) {
         clearInterval(inter);
         this.shooting = false;
@@ -43,7 +44,7 @@ export class GameComponent implements OnInit, AfterViewInit {
   moveLeft() {
     console.log('listener key left');
     var element = document.getElementById('ship1');
-    this.ship.X -= 5;
+    this.ship.X -= 17;
     element.style.transform = 'translate(' + (this.ship.X) + 'px,' + (this.ship.Y) + 'px)';
     console.log('X:' + this.ship.X);
   }
@@ -53,7 +54,7 @@ export class GameComponent implements OnInit, AfterViewInit {
   moveRight() {
     console.log('listener key right');
     var element = document.getElementById('ship1');
-    this.ship.X += 5;
+    this.ship.X += 17;
     element.style.transform = 'translate(' + (this.ship.X) + 'px,' + (this.ship.Y) + 'px)';
     console.log('X:' + this.ship.X);
   }
@@ -62,7 +63,7 @@ export class GameComponent implements OnInit, AfterViewInit {
   moveUp() {
     console.log('listener key up');
     var element = document.getElementById('ship1');
-    this.ship.Y -= 5;
+    this.ship.Y -= 17;
     element.style.transform = 'translate(' + (this.ship.X) + 'px,' + (this.ship.Y) + 'px)';
     console.log('Y:' + this.ship.Y);
   }
@@ -71,7 +72,7 @@ export class GameComponent implements OnInit, AfterViewInit {
   moveDown() {
     console.log('listener key down');
     var element = document.getElementById('ship1');
-    this.ship.Y += 5;
+    this.ship.Y += 17;
     element.style.transform = 'translate(' + (this.ship.X) + 'px,' + (this.ship.Y) + 'px)';
     console.log('Y:' + this.ship.Y);
   }
@@ -83,28 +84,39 @@ export class GameComponent implements OnInit, AfterViewInit {
 
 
   ngOnInit() {
+
+        this.registerEventHandlers();
   }
   ngAfterViewInit(): void {
     var element = document.getElementById('ship1');
     element.className = 'ship';
     element.style.backgroundImage = 'url(' + this.ship.img + ')';
   }
-  keyClicked(event) {
-    var element = document.getElementById('ship1');
-    switch (event.keyCode) {
-      case 37:
-        console.log('key left');
+  registerEventHandlers() {
+    /**
+     * Event handlers
+     */
+    document.addEventListener('keydown',  (e)=> {
+        var keyCode = e.which;
+        if (this.keysDown.indexOf(keyCode) === -1) {
+            this.keysDown.push(keyCode);
+            
+        }
+    });
+    document.addEventListener('keyup',  (e)=> {
+        var keyCode = e.which;
+        this.keysDown.splice(this.keysDown.indexOf(keyCode), 1);
+    });
 
-        break;
-      case 38:
-        console.log('key up');
-        break;
-      case 39:
-        console.log('key right');
-        break;
-      case 40:
-        console.log('key down');
-        break;
-    }
-  }
+    document.addEventListener('shot',  (e:any)=> {
+        var position = e.detail;
+        //score += 100 * shotFactory.firepower();
+       // levelPlayer.alienRemoved();
+       // sfx.sounds.explosion.play(position.x, position.y, position.z);
+    });
+
+    
+
+    
+}
 }
