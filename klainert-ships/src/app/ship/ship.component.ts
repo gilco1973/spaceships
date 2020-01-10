@@ -9,6 +9,7 @@ export class ShipComponent {
   img: string;
   X = 50;
   Y = 100;
+  owner: string;
   constructor() { }
 
   

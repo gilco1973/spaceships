@@ -6,6 +6,7 @@ import { ShipComponent } from './ship/ship.component';
 })
 export class GameService {
   ship: ShipComponent;
+  userName: string;
 
   constructor() { }
 }

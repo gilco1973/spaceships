@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Route, Router } from '@angular/router';
+import { GameService } from '../game.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   returnUrl: string;
   username: string;
 
-  constructor(private formBuilder: FormBuilder, private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private router: Router, private gameService: GameService) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -28,7 +29,7 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
-
+    this.gameService.userName = this.loginForm.value.username;
     this.loading = true;
     this.router.navigateByUrl('/ships');
     // this.authenticationService.login(this.f.username.value, this.f.password.value)
