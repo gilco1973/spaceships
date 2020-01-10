@@ -17,6 +17,14 @@ const routes: Routes = [
   {
     path: 'game',
     component: GameComponent
+  },
+  {
+    path: '',
+    component: LoginComponent
+  },
+  {
+    path: '**',
+    component: LoginComponent
   }
 ];
 

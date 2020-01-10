@@ -25,6 +25,18 @@ button{
     bottom: 40px;
     margin: auto;
     width: 100%;
-    margin-left: 25%;
     margin-bottom: 10px;
+}
+.life {
+    display: flex;
+    flex-direction: row;
+    bottom: -15px;
+    position: absolute;
+    left: 0px;
+}
+.life-unit{
+    height: 4px;
+    width: 4px;
+    margin: 1px;
+    background-color: yellowgreen;
 }

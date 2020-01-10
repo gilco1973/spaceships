@@ -10,6 +10,8 @@ export class ShipComponent {
   X = 50;
   Y = 100;
   owner: string;
+  lifeUnits = [1,1,1,1,1,1,1,1,1];
+  
   constructor() { }
 
   

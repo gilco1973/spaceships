@@ -20,54 +20,70 @@ export class ShipGalleryComponent implements OnInit {
         img: '../../assets/ship.png',
         X: 50,
         Y: 60,
-        owner: this.gameService.userName
+        owner: this.gameService.userName,
+        lifeUnits: [1,1,1,1,1,1,1,1,1]
       },
       {
         img: '../../assets/ship2.png',
         X: 50,
         Y: 60,
-        owner: this.gameService.userName
+        owner: this.gameService.userName,
+        lifeUnits: [1,1,1,1,1,1,1,1,1]
       }, {
         img: '../../assets/ship3.png',
         X: 50,
         Y: 60,
-        owner: this.gameService.userName
+        owner: this.gameService.userName,
+        lifeUnits: [1,1,1,1,1,1,1,1,1]
       }, {
         img: '../../assets/ship4.png',
         X: 50,
         Y: 60,
-        owner: this.gameService.userName
+        owner: this.gameService.userName,
+        lifeUnits: [1,1,1,1,1,1,1,1,1]
       }, {
         img: '../../assets/ship5.png',
         X: 50,
         Y: 60,
-        owner: this.gameService.userName
+        owner: this.gameService.userName,
+        lifeUnits: [1,1,1,1,1,1,1,1,1]
       }, {
         img: '../../assets/ship6.png',
         X: 50,
         Y: 60,
-        owner: this.gameService.userName
+        owner: this.gameService.userName,
+        lifeUnits: [1,1,1,1,1,1,1,1,1]
       }, {
         img: '../../assets/ship7.png',
         X: 50,
         Y: 60,
-        owner: this.gameService.userName
+        owner: this.gameService.userName,
+        lifeUnits: [1,1,1,1,1,1,1,1,1]
       }, {
         img: '../../assets/ship8.png',
         X: 50,
         Y: 60,
-        owner: this.gameService.userName
+        owner: this.gameService.userName,
+        lifeUnits: [1,1,1,1,1,1,1,1,1]
       }, {
         img: '../../assets/ship9.png',
         X: 50,
         Y: 60,
-        owner: this.gameService.userName
+        owner: this.gameService.userName,
+        lifeUnits: [1,1,1,1,1,1,1,1,1]
       }
     ];
   }
   startGame() {
     console.log(this.selectedShip);
     this.gameService.ship = this.selectedShip;
+    this.gameService.ship2 = {
+      img: '../../assets/ship8.png',
+      X: 50,
+      Y: 60,
+      owner: 'אבא',
+      lifeUnits: [1,1,1,1,1,1,1,1,1]
+    };
     this.router.navigateByUrl('/game');
   }
 
