@@ -1,0 +1,42 @@
+.ship{
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    width: 88px;
+    height: 48px;
+    margin: auto;
+    position: absolute;
+}
+button{
+    background-color: transparent;
+    border:none;
+    display: block;
+}
+.shot{
+    height:5px;
+    width:20px;
+    color: red;
+    background-color: red;
+}
+.owner-name{
+    color: white;
+    display: flex;
+    position: absolute;
+    bottom: 40px;
+    margin: auto;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.life {
+    display: flex;
+    flex-direction: row;
+    bottom: -15px;
+    position: absolute;
+    left: 0px;
+}
+.life-unit{
+    height: 4px;
+    width: 4px;
+    margin: 1px;
+    background-color: yellowgreen;
+}

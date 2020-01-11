@@ -7,7 +7,7 @@ import { ShipComponent } from './ship/ship.component';
 export class GameService {
   ship: ShipComponent;
   userName: string;
-  ship2: { img: string; X: number; Y: number; owner: string; lifeUnits: number[]; };
+  ship2: ShipComponent;
 
   constructor() { }
 }

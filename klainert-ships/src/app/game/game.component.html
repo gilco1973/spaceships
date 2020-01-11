@@ -1,20 +1,5 @@
 <div
   style="background-image:url('../../assets/space2.jpg');background-repeat: no-repeat;background-size: cover;height:850px;width:100%">
 
-  <button id="ship1" class="ship" (keydown)="keyClicked($event)">
-    <label class="owner-name" *ngIf="ship">{{ship.owner}}</label>
-    <div class="life">
-      <div class="life-unit" *ngFor="let unit of ship.lifeUnits">
-      </div>
-    </div>
-  </button>
-  <div id="shot" class="shot" [hidden]="!shooting">
-  </div>
-
-  <button id="ship2" class="ship" (keydown)="keyClicked($event)">
-        <label class="owner-name" *ngIf="ship2">{{ship2.owner}}</label>
-        <div class="life">
-          <div class="life-unit" *ngFor="let unit of ship2.lifeUnits">
-          </div>
-        </div>
-      </button>
+  <app-ship [id]="0"></app-ship>
+  <app-ship [id]="1"></app-ship>
