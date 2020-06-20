@@ -1,5 +1,5 @@
-<button id="{{id}}" class="ship" (keydown)="keyClicked($event)">
-  <label class="owner-name" *ngIf="owner">{{owner}}</label>
+<button #btnImg id="{{id}}" class="ship" (keydown)="keyClicked($event)" [style.background]="'url(' + img + ')'">
+  <label class="owner-name">{{owner}}</label>
   <div class="life">
     <div class="life-unit" *ngFor="let unit of lifeUnits">
     </div>

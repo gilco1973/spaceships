@@ -1,5 +1,7 @@
 <div
   style="background-image:url('../../assets/space2.jpg');background-repeat: no-repeat;background-size: cover;height:850px;width:100%">
 
-  <app-ship [id]="0"></app-ship>
-  <app-ship [id]="1"></app-ship>
+  <app-ship #ship></app-ship>
+  <div [style.left.px]="asteroid.x" [style.top.px]="asteroid.y" *ngFor="let asteroid of asteroids" class="asteroid">
+  </div>
+</div>

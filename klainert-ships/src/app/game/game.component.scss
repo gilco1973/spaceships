@@ -1,0 +1,11 @@
+.asteroid{
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    display: block;
+    width: 48px;
+    height: 48px;
+    margin: auto;
+    position: absolute;
+    background-image: url('../../assets/asteroid.png');
+    position: absolute !important;
+}

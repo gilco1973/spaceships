@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, Route } from '@angular/router';
 import { GameService } from '../game.service';
 import { ShipComponent } from '../ship/ship.component';
+import { Ship } from '../models/Ship';
 
 @Component({
   selector: 'app-ship-gallery',
@@ -9,9 +10,9 @@ import { ShipComponent } from '../ship/ship.component';
   styleUrls: ['./ship-gallery.component.scss']
 })
 export class ShipGalleryComponent implements OnInit {
-  ships: ShipComponent[];
+  ships: Ship[];
   user: string;
-  selectedShip: any;
+  selectedShip: Ship;
   constructor(private router: Router, private gameService: GameService) { }
 
   ngOnInit() {
@@ -34,7 +35,7 @@ export class ShipGalleryComponent implements OnInit {
         owner: this.gameService.userName,
         lifeUnits: [1,1,1,1,1,1,1,1,1],
         shotId:'1001',
-        shooting: false
+        shooting: false,
       }, {
         id:2,
         img: '../../assets/ship3.png',
@@ -43,7 +44,7 @@ export class ShipGalleryComponent implements OnInit {
         owner: this.gameService.userName,
         lifeUnits: [1,1,1,1,1,1,1,1,1],
         shotId:'1002',
-        shooting: false
+        shooting: false,
       }, {
         id:3,
         img: '../../assets/ship4.png',
@@ -52,7 +53,7 @@ export class ShipGalleryComponent implements OnInit {
         owner: this.gameService.userName,
         lifeUnits: [1,1,1,1,1,1,1,1,1],
         shotId:'1003',
-        shooting: false
+        shooting: false,
       }, {
         id:4,
         img: '../../assets/ship5.png',
@@ -61,7 +62,7 @@ export class ShipGalleryComponent implements OnInit {
         owner: this.gameService.userName,
         lifeUnits: [1,1,1,1,1,1,1,1,1],
         shotId:'1004',
-        shooting: false
+        shooting: false,
       }, {
         id:5,
         img: '../../assets/ship6.png',
@@ -70,7 +71,7 @@ export class ShipGalleryComponent implements OnInit {
         owner: this.gameService.userName,
         lifeUnits: [1,1,1,1,1,1,1,1,1],
         shotId:'1005',
-        shooting: false
+        shooting: false,
       }, {
         id:6,
         img: '../../assets/ship7.png',
@@ -79,7 +80,7 @@ export class ShipGalleryComponent implements OnInit {
         owner: this.gameService.userName,
         lifeUnits: [1,1,1,1,1,1,1,1,1],
         shotId:'1006',
-        shooting: false
+        shooting: false,
       }, {
         id:7,
         img: '../../assets/ship8.png',
@@ -88,7 +89,7 @@ export class ShipGalleryComponent implements OnInit {
         owner: this.gameService.userName,
         lifeUnits: [1,1,1,1,1,1,1,1,1],
         shotId:'1007',
-        shooting: false
+        shooting: false,
       }, {
         id:8,
         img: '../../assets/ship9.png',
@@ -97,23 +98,14 @@ export class ShipGalleryComponent implements OnInit {
         owner: this.gameService.userName,
         lifeUnits: [1,1,1,1,1,1,1,1,1],
         shotId:'1008',
-        shooting: false
+        shooting: false,
       }
     ];
   }
   startGame() {
     console.log(this.selectedShip);
     this.gameService.ship = this.selectedShip;
-    this.gameService.ship2 = {
-      id: 1,
-      img: '../../assets/ship8.png',
-      X: 50,
-      Y: 60,
-      owner: 'אבא',
-      lifeUnits: [1,1,1,1,1,1,1,1,1],
-      shotId: '1001',
-      shooting: false
-    };
+    this.gameService.ship2 = this.ships[7];
     this.router.navigateByUrl('/game');
   }
 

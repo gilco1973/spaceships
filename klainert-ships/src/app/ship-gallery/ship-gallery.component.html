@@ -1,11 +1,9 @@
-
 <div style="background: black;
-height: 100px;
 color: blue;
 margin: auto;
 width: 100%;
 ">
-<h3 style="    margin: auto;
+  <h3 style="    margin: auto;
 width: 100%;
 text-align: center;
 padding-top: 20px;
@@ -13,8 +11,10 @@ font-size: -webkit-xxx-large;">בחר את החללית שלך</h3>
 </div>
 <div class="background">
   <div class="list">
-    <app-ship-frame [img]="ship.img" *ngFor="let ship of ships" style="flex: 0 0 32%;" (click)="selectedShip=ship;startGame()">
-
-    </app-ship-frame>
+    <app-ship-frame *ngFor="let ship of ships" style="flex: 0 0 32%;" [img]="ship.img" (click)="selectedShip=ship; startGame()">
+      <app-ship [shotId]="ship.shotId" [id]="ship.id" [img]="ship.img"
+        (click)="selectedShip=ship; startGame()">
+      </app-ship>
+    </app-ship-frame> 
   </div>
 </div>
